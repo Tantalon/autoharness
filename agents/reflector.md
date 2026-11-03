@@ -33,6 +33,7 @@ A generic skill costs every session index space and attention, and the lifecycle
 
 - **Passes:** a user preference not already in CLAUDE.md or memory; an environment fact (IDs, hosts, paths, versions, what a field means); a tool or system behaviour that contradicts reasonable expectation; a step the trace shows the model got wrong (user correction, failed command, wrong answer, retry).
 - **Fails:** general good practice (verify before claiming done, canary first, read before writing, handle errors, check the docs); anything CLAUDE.md, memory or an existing skill already says; a technique that worked first time without surprise.
+- **Coverage check, before every `create` or `patch`:** Grep the lesson's key terms in `~/.claude/CLAUDE.md`, `~/.claude/memory/`, `~/.claude/projects/*/memory/` and the skill bodies the index points to. Already covered → stage nothing. Partly covered → stage only the uncovered part.
 - **Evidence:** prefer the slice showing the miss (the correction or failure) over one showing success. If you cannot find a miss, the lesson is probably not spiky.
 
 ## Compare-first: prefer merging into what exists
