@@ -41,10 +41,12 @@ def test_reflector_body_teaches_folder_skill():
         assert token in body
 
 
-def test_reflector_prompt_has_no_authoring_gates():
+def test_reflector_prompt_gates_on_spike_test():
+    # Fork policy: only lessons that change default model behaviour are staged.
     body = AGENT.read_text().lower()
-    for gate in ("at most one", "do not capture", "only valid if"):
-        assert gate not in body
+    assert "spike test" in body
+    assert "capture liberally" not in body
+    assert "at most one" not in body  # a gate on lesson quality, not on count
 
 
 def test_reflector_prompt_encourages_generation():

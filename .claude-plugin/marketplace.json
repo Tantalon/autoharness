@@ -1,6 +1,8 @@
 {
-  "name": "autoharness",
-  "owner": { "name": "Tigerless Labs" },
+  "name": "autoharness-tantalon",
+  "owner": {
+    "name": "Tantalon"
+  },
   "plugins": [
     {
       "name": "autoharness",
